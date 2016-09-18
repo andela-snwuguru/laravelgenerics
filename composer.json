@@ -1,0 +1,17 @@
+{
+    "name": "sundayguru/laravelgenerics",
+    "description": "Laravel Generics provides generic views to reduce similar code and enhance rapid development",
+    "type": "project",
+    "license": "MIT",
+    "authors": [{
+        "name": "Sunday Nwuguru",
+        "email": "sundayguru@gmail.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "Sundayguru\\Laravelgenerics\\": "src"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
