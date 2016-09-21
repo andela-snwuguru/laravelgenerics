@@ -7,11 +7,17 @@ namespace Sundayguru\Laravelgenerics\Utils;
  */
 class Render
 {
-    public static function table(){
-        $table = '<table class="table">';
-        $table .= self::tableHeader();
-        $table .= '</table>';
-        return $table;
+    public $columns = [];
+    public $records = [];
+
+    public function __contruct($records, $columns=[]){
+        $this->records = $records;
+        $this->columns = empty($columns) ? $this->getColumnsFromModel($records) : $columns;
+    }
+
+    public static function table($records, $columns=[], $attributes=[]){
+        $columns = empty($columns) ? self::getColumnsFromModel($records) : $columns;
+        return view('laravelgenerics::table', ['records'=>$records, 'columns'=>$columns, 'attributes'=>$attributes]);
     }
 
     public static function tableHeader(){
@@ -26,6 +32,17 @@ class Render
         $tr .= '<th>Test</th>';
         $tr .= '</tr>';
         return $tr;
+    }
+
+    public static function getColumnsFromModel($records){
+        if (!$records->first()) {
+            return [];
+        }
+        return array_keys($records->first()->toArray());
+    }
+    
+    public static function getTHTitle($value){
+        return str_ireplace('_',' ', $value);
     }
 
     

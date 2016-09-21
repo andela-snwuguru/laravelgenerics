@@ -13,5 +13,7 @@
         }
     },
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "gbrock/laravel-table": "dev-master"
+    }
 }

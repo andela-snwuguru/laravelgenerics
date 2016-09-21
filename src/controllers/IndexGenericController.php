@@ -9,6 +9,6 @@ use Illuminate\Routing\Controller;
  */
 class IndexGenericController extends Controller
 {
-    use \Sundayguru\Laravelgenerics\Actions\IndexView;
+    use \Sundayguru\Laravelgenerics\Traits\IndexView;
     
 }
