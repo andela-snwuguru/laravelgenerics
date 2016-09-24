@@ -44,7 +44,9 @@ trait UpdateView
         $record->save();
         if(isset($this->manyRelation)){
             foreach($this->manyRelation as $relation){
-                $record->$relation()->sync($request->$relation, false);
+                if($request->$relation){
+                    $record->$relation()->sync($request->$relation, false);
+                }
             }
         }
 

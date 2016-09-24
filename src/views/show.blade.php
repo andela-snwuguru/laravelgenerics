@@ -9,7 +9,7 @@
 @endsection
 
 @section(isset($ctrl->contentSectionName) ? $ctrl->contentSectionName : 'content')
-<div class="row">
+<div class="{{ isset($ctrl->pageDivClass) ? $ctrl->pageDivClass : 'col-md-7 col-md-offset-3' }}">
   <fieldset>
   <legend class="row">
   <div class="{{ isset($ctrl->detailPageTitleDivClass)  ? $ctrl->detailPageTitleDivClass : 'col-md-10' }}">

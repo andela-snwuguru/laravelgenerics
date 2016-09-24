@@ -29,7 +29,7 @@ trait IndexView
             $records = $model::paginate(isset($this->pageSize) ? $this->pageSize : 10);
         }
         
-        return view('laravelgenerics::index', [
+        return view(isset($this->indexTemplate) ? $this->indexTemplate : 'laravelgenerics::index', [
                 'records'=>$records,
                 'ctrl'=>$this,
                 'columns'=>isset($this->indexColumns) ? $this->indexColumns : [],

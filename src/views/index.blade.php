@@ -1,7 +1,7 @@
 @extends(isset($ctrl->baseTemplate) ? $ctrl->baseTemplate : 'laravelgenerics::layout')
 @section('title', isset($ctrl->indexPageTitle)  ? $ctrl->indexPageTitle : 'Manage Records')
 @section(isset($ctrl->contentSectionName) ? $ctrl->contentSectionName : 'content')
-<div class="row">
+<div class="{{ isset($ctrl->pageDivClass) ? $ctrl->pageDivClass : 'col-md-7 col-md-offset-3' }}">
   <fieldset>
   <legend class="row">
   <div class="{{ isset($ctrl->indexPageTitleDivClass)  ? $ctrl->indexPageTitleDivClass : 'col-md-10' }}">
