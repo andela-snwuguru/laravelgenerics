@@ -7,6 +7,12 @@ namespace Sundayguru\Laravelgenerics\Traits;
  */
 trait DetailView
 {
+    /**
+    * Display the specified resource.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
     public function show($id){
         if(!isset($this->model)){
             abort(400, 'Controller require model attribute');

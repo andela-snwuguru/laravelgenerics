@@ -3,10 +3,15 @@
 namespace Sundayguru\Laravelgenerics\Traits;
 
 /**
- * 
+ * Generic listing view
  */
 trait IndexView
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index(){
         if(!isset($this->model)){
             abort(400, 'Controller require model attribute');

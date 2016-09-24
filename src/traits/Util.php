@@ -20,4 +20,6 @@ trait Util
         return str_ireplace('_',' ', ucwords($value));
     }
 
+    
+
 }
