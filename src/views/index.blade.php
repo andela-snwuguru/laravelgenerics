@@ -18,3 +18,16 @@
   </fieldset>
 </div>
 @endsection
+
+
+@section(isset($ctrl->styleSectionName) ? $ctrl->styleSectionName : 'styles')
+   @if(isset($ctrl->indexStyleTemplate))
+    @include($ctrl->indexStyleTemplate)
+   @endif
+@endsection
+
+@section(isset($ctrl->scriptSectionName) ? $ctrl->scriptSectionName : 'scripts')
+   @if(isset($ctrl->indexScriptTemplate))
+    @include($ctrl->indexScriptTemplate)
+   @endif
+@endsection

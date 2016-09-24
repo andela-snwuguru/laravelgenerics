@@ -58,3 +58,16 @@
         }
     </script>
 @endsection
+
+
+@section(isset($ctrl->styleSectionName) ? $ctrl->styleSectionName : 'styles')
+   @if(isset($ctrl->detailStyleTemplate))
+    @include($ctrl->detailStyleTemplate)
+   @endif
+@endsection
+
+@section(isset($ctrl->scriptSectionName) ? $ctrl->scriptSectionName : 'scripts')
+   @if(isset($ctrl->detailScriptTemplate))
+    @include($ctrl->detailScriptTemplate)
+   @endif
+@endsection

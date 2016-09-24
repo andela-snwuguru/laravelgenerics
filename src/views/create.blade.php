@@ -8,7 +8,7 @@
     <h3>{{ isset($ctrl->createPageTitle)  ? $ctrl->createPageTitle : 'Create New Record' }}</h3>
   </legend>
   <div class="row">
-    {!! Form::open(array('url' => $ctrl->routeBase, 'data-parsley-validate')) !!}
+    {!! Form::open(array_merge(array('url' => $ctrl->routeBase), isset($ctrl->formAttributes) ? $ctrl->formAttributes : [])) !!}
         <div class="row">
             @include(isset($ctrl->formTemplate)  ? $ctrl->formTemplate : 'laravelgenerics::form')
         </div>
