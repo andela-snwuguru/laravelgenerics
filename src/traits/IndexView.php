@@ -2,8 +2,6 @@
 
 namespace Sundayguru\Laravelgenerics\Traits;
 
-use Sundayguru\Laravelgenerics\Utils\Render;
-use App\Post;
 /**
  * 
  */
@@ -29,22 +27,9 @@ trait IndexView
         return view('laravelgenerics::index', [
                 'records'=>$records,
                 'ctrl'=>$this,
-                'columns'=>isset($this->columns) ? $this->columns : [],
+                'columns'=>isset($this->indexColumns) ? $this->indexColumns : [],
                 'attributes'=>isset($this->tableAttributes) ? $this->tableAttributes : []
             ]);
-    }
-
-    /**
-    * Returns formated label for table header
-    * @param string $key 
-    * @param string $value 
-    * @return string
-    */
-    public function getTableHeaderLabel($key, $value){
-        if(is_array($value)){
-            return str_ireplace('_',' ', isset($value[1]) ? ucwords($value[1]) : ucwords($value[0]));
-        }
-        return str_ireplace('_',' ', ucwords($value));
     }
 
 }

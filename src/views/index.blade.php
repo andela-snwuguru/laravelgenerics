@@ -1,6 +1,6 @@
-@extends(isset($this->baseTemplate) ? $this->baseTemplate : 'laravelgenerics::main')
+@extends(isset($ctrl->baseTemplate) ? $ctrl->baseTemplate : 'laravelgenerics::layout')
 @section('title', isset($ctrl->indexPageTitle)  ? $ctrl->indexPageTitle : 'Manage Records')
-@section(isset($this->contentSectionName) ? $this->contentSectionName : 'content')
+@section(isset($ctrl->contentSectionName) ? $ctrl->contentSectionName : 'content')
 <div class="row">
   <fieldset>
   <legend class="row">
